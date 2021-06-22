@@ -36,10 +36,10 @@ public extension LogBody {
 }
 
 public class Skidder {
-    static let `default` = Skidder()
+    public static let `default` = Skidder()
 
-    var logLevel = LogLevel.info
-    var environment: String?
+    public var logLevel = LogLevel.info
+    public var environment: String?
 
     private var services: [SkidderLogService] = []
     private var globalData: LogData = [:]
@@ -57,13 +57,13 @@ public class Skidder {
     // MARK: - Public
 
     // Getters & Setters
-    func addService(_ service: SkidderLogService) {
+    public func addService(_ service: SkidderLogService) {
         guard !services.contains(where: { $0.id == service.id }) else { return }
 
         services.append(service)
     }
 
-    func removeService(for id: String) {
+    public func removeService(for id: String) {
         services = services.filter({ $0.id != id })
     }
 
@@ -76,7 +76,7 @@ public class Skidder {
         services.forEach({ $0.logBody(body, with: level) })
     }
 
-    static func log(with level: LogLevel, message: String, data: LogData? = nil) {
+    public static func log(with level: LogLevel, message: String, data: LogData? = nil) {
         Skidder.default.log(with: level, message: message, data: data)
     }
 
