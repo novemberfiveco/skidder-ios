@@ -1,1 +1,3 @@
-# skidder-ios
+# Skidder
+
+A description of this package.
