@@ -16,12 +16,12 @@ extension Encodable {
 }
 
 public struct LogBody: Encodable {
-    let timestamp: String
-    let level: String
-    let message: String
-    let data: LogData?
-    let environment: String?
-    let global: LogData?
+    public let timestamp: String
+    public let level: String
+    public let message: String
+    public let data: LogData?
+    public let environment: String?
+    public let global: LogData?
 }
 
 public extension LogBody {
