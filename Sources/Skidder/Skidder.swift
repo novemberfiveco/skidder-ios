@@ -44,7 +44,7 @@ public class Skidder {
     private var services: [SkidderLogService] = []
     private var globalData: LogData = [:]
 
-    func setGlobal(key: String, value: String?) {
+    public func setGlobal(key: String, value: String?) {
         if let value = value {
             globalData[key] = value
         } else {
